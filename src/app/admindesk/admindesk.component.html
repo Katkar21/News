@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <title>admin</title>
+        <style>
+        
+table, th, td {
+  border: 3px solid black;
+  border-collapse: collapse;
+  
+}
+
+table{
+    margin: 10px;
+}
+th{
+  padding: 15px;
+  text-align: center;
+  
+}
+td{
+    padding: 9px;
+}
+
+body{
+    box-sizing: border-box;
+}
+
+button{
+
+    width: 100px;
+    padding:10px;
+    background-color: rgba(192, 37, 37, 0.981);
+    font-size: large;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    align-items:center;
+    border: none;
+    border-radius: 5px;
+    box-shadow: inset;
+    margin-left: 70px;
+    margin-right: -100px;
+
+
+}
+
+button#b{
+    align-items: center;
+    background-color: green;
+    width: 100px;
+    padding:10px;
+    
+    font-size: large;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    align-items:center;
+    border: none;
+    border-radius: 5px;
+    box-shadow: inset;
+  
+}
+</style>
+
+      
+    </head>
+</html>
+
+<table style="width: 100%" >
+       <tr>
+        <th>User Email-ID</th>
+        <th>User Name</th>
+        <th>Contact Number</th>
+        <th>Address</th>
+        <th></th>
+       </tr>
+        <tr *ngFor="let u of user" >
+            <td>
+                {{u.emailId}}
+            </td>
+            <td>
+                {{u.userName}}
+            </td>
+            <td>
+                {{u.userContactNumber}}
+            </td>
+            <td>
+                {{u.userAddress}}
+            </td>
+
+            <td>
+                <button (click)="deleteUser(u.emailId)">Delete</button>
+            </td>
+        </tr>
+
+        
+  
+    </table>
+
+    <button routerLink="/admin" id="b">Back</button>
+
+
